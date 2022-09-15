@@ -1,9 +1,11 @@
 # Simultaneous FX Price Prediction by Using Temporal Multivariate Graph Neural Networks
 
-## Project Members
-Hamza Ayberk Akbalık
-Nurettin Burak Altıntaş
-Ege Öztaş
+<h3>Project Members</h3>
+<ul>
+  <li>Hamza Ayberk Akbalık</li>
+  <li>Nurettin Burak Altıntaş</li>
+  <li>Ege Öztaş</li>
+<ul>
 
 ## Requirements and Setup
 
