@@ -68,35 +68,39 @@ The detailed descriptions about the parameters are as following:
 | early_stop | whether to enable early stop, default False |
 
 
-**Table 1** Configurations for all datasets
-| Dataset | train | evaluate | node_cnt | window_size | horizon | norm_method |
-| -----   | ---- | ---- |---- |---- |---- | --- |
-| METR-LA | True | True | 207 | 12 | 3 | z_score |
-| PEMS-BAY | True | True |  325 | 12 | 3 | z_score |
-| PEMS03 | True | True |  358 | 12 | 3 | z_score |
-| PEMS04 | True | True |  307 | 12 | 3 | z_score |
-| PEMS07 | True | True | 228 | 12 | 3 | z_score |
-| PEMS08 | True | True |  170 | 12 | 3 | z_score |
-| COVID-19| True | True | 25 | 28 | 28 | z_score |
+**Table 1** MAPE RESULTS of LSTM vs StemGNN
+| Currencies | Mapes of LSTM | Mapes of StemGNN |
+| EUR | 1.076 | 0.617 |
+| CAD | 2.154 | 0.972 |
+| JPY | 3.033 | 1.052 |
+| GBP | 1.818 | 0.784 |
+| AUD | 3.437 | 0.832 |
+| RUB | 24.85 | 3.447 |
+| CHF | 4.270 | 1.065 |
+| CNY | 1.566 | 0.410 |
+| INR | 9.893 | 3.807 |
 
 ## Results
 
 Our model achieves the following performance on the 10 datasets:
 
-**Table 2** (predict horizon: 3 steps)
+**Table 2** Weight Ratio of StemGNN in the Portfolio
 
-| Dataset | MAE  | RMSE | MAPE(%) |
-| -----   | ---- | ---- | ---- |
-| METR-LA | 2.56 | 5.06 | 6.46 |
-| PEMS-BAY | 1.23 | 2.48 | 2.63 |
-| PEMS03 | 14.32 | 21.64 | 16.24 |
-| PEMS04 | 20.24 | 32.15 | 10.03 |
-| PEMS07 | 2.14 | 4.01 | 5.01 |
-| PEMS08 | 15.83 | 24.93 | 9.26 |
+| Currencies | Mapes of LSTM | Mapes of StemGNN |
+| EUR | 10.42% |
+| CAD | 0.86% |
+| JPY | 0.00% |
+| GBP | 0.03% |
+| AUD | 2.79% |
+| RUB | 0.00% |
+| CHF | 46.07% |
+| CNY | 34.72% |
+| INR | 5.11% |
 
-**Table 3** (predict horizon: 28 steps)
+**Table 3** Portfolio Results of DeepGLO vs StemGNN
 
-| Dataset | MAE  | RMSE | MAPE |
-| -----   | ---- | ---- | ---- |
-| COVID-19 | 662.24 | 1023.19| 19.3|
+| Results | DeepGLO| StemGNN |
+| Total Return | 1.10% | 2.00% |
+| Volatility | 1.20% | 0.70% |
+| Sharpe Ratio | 0.78 | 2.63 |
 
