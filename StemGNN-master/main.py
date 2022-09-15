@@ -32,21 +32,21 @@ parser.add_argument('--leakyrelu_rate', type=int, default=0.2)
 ""
 args = parser.parse_args()
 print(f'Training configs: {args}')
-data_file = os.path.join('dataset', args.dataset + '.csv')   # dataset file'a git, args.dataset yani ECG_data'yı al, .csv ekle
-result_train_file = os.path.join('output', args.dataset, 'train')  # output file'da ECG datasetini al, train file'ı al. Şu an train file boş
-result_test_file = os.path.join('output', args.dataset, 'test')    # output file'da ECG datasetini al, test file'ı al. Şu an test file boş
-if not os.path.exists(result_train_file):           # eğer bu file yoksa, oluştur
+data_file = os.path.join('dataset', args.dataset + '.csv')   # go to dataset file, take args.dataset (ECG_data), add .csv
+result_train_file = os.path.join('output', args.dataset, 'train')  # take ECG dataset from output file, take train file. Now, train file is empty
+result_test_file = os.path.join('output', args.dataset, 'test')    # take ECG dataset from output file, take test file. Now, test file is empty
+if not os.path.exists(result_train_file):           # if doesn't exist, create it
     os.makedirs(result_train_file)
 if not os.path.exists(result_test_file):
     os.makedirs(result_test_file)
 data = pd.read_csv(data_file).values
 
 # split data
-train_ratio = args.train_length / (args.train_length + args.valid_length + args.test_length)         # train için oranı oluştur. burada 7/10 gelecek
+train_ratio = args.train_length / (args.train_length + args.valid_length + args.test_length)         
 valid_ratio = args.valid_length / (args.train_length + args.valid_length + args.test_length)
 test_ratio = 1 - train_ratio - valid_ratio
-train_data = data[:int(train_ratio * len(data))]             # train data için datanın train ratio * uzunluğu kadar olan bölgeyi al
-valid_data = data[int(train_ratio * len(data)):int((train_ratio + valid_ratio) * len(data))]  # validation data için datanın 0.2'lik bölümünü al(0.7-0.9 arası bölümü)
+train_data = data[:int(train_ratio * len(data))]            
+valid_data = data[int(train_ratio * len(data)):int((train_ratio + valid_ratio) * len(data))] 
 test_data = data[int((train_ratio + valid_ratio) * len(data)):]
 
 torch.manual_seed(0)
