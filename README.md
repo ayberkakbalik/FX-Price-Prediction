@@ -1,5 +1,10 @@
 # Simultaneous FX Price Prediction by Using Temporal Multivariate Graph Neural Networks
 
+## Project Members
+Hamza Ayberk Akbalık
+Nurettin Burak Altıntaş
+Ege Öztaş
+
 ## Requirements and Setup
 
 * **StemGNN**: ([instruction to setup StemGNN](https://github.com/microsoft/StemGNN)).
